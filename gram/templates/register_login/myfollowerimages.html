@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>my_follower_images</title>
+</head>
+<body>
+<h1>my_follower_images</h1>
+
+{% for user in  my_follower_images.followers.all %}
+    {% for image in user.images.all %}
+        <div>
+            <img src="{{ image.image.url }}" width="200px" height="200px"><br>
+            {{ image.image_caption }}
+        </div>
+
+
+    {% endfor %}
+
+
+{% endfor %}
+
+</body>
+</html>

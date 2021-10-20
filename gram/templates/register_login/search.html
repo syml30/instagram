@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>search</title>
+</head>
+<body>
+{#<form class="navbar-form pull-right" action="/search" method="get">#}
+{#    <button type="submit"><span class ="icon-search"></span> Search</button>#}
+{##}
+{#    <input type="text" class="span1" id="navSearchInput" name="name"/>#}
+{#    <input type="submit" />#}
+
+<form method="GET" action="{% url 'search' %}">
+    <input type="text" name="q">
+    <input type="submit">
+
+</form>
+<div>
+    {% for user in users_finded %}
+        {{ user.username }}
+    <hr>
+
+    {% endfor %}
+</div>
+
+
+</body>
+</html>
